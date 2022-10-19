@@ -1,5 +1,7 @@
 <template>
-  <div>About</div>
+  <div>
+    <h2>Not Found</h2>
+  </div>
 </template>
 
 <script lang="ts">

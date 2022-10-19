@@ -1,4 +1,4 @@
-# vue3-manage
+# vue3-ts-cms
 
 ## Project setup
 
