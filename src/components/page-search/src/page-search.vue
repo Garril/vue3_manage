@@ -1,6 +1,6 @@
 <template>
   <div class="page-search">
-    <hy-form v-bind="searchFormConfig" v-model="formData">
+    <g-form v-bind="searchFormConfig" v-model="formData">
       <template #header>
         <h1 class="header">高级检索</h1>
       </template>
@@ -17,13 +17,13 @@
           >
         </div>
       </template>
-    </hy-form>
+    </g-form>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
-import HyForm from '@/base-ui/form'
+import GForm from '@/base-ui/form'
 
 export default defineComponent({
   props: {
@@ -33,7 +33,7 @@ export default defineComponent({
     }
   },
   components: {
-    HyForm
+    GForm
   },
   emits: ['resetBtnClick', 'queryBtnClick'],
   setup(props, { emit }) {

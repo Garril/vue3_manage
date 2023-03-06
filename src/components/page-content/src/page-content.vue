@@ -1,6 +1,6 @@
 <template>
   <div class="page-content">
-    <hy-table
+    <g-table
       :listData="dataList"
       :listCount="dataCount"
       v-bind="contentTableConfig"
@@ -66,7 +66,7 @@
           <slot :name="item.slotName" :row="scope.row"></slot>
         </template>
       </template>
-    </hy-table>
+    </g-table>
   </div>
 </template>
 
@@ -75,11 +75,11 @@ import { defineComponent, computed, ref, watch } from 'vue'
 import { useStore } from '@/store'
 import { usePermission } from '@/hooks/use-permission'
 
-import HyTable from '@/base-ui/table'
+import GTable from '@/base-ui/table'
 
 export default defineComponent({
   components: {
-    HyTable
+    GTable
   },
   props: {
     contentTableConfig: {

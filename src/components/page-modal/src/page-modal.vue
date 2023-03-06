@@ -7,7 +7,7 @@
       center
       destroy-on-close
     >
-      <hy-form v-bind="modalConfig" v-model="formData"></hy-form>
+      <g-form v-bind="modalConfig" v-model="formData"></g-form>
       <slot></slot>
       <template #footer>
         <span class="dialog-footer">
@@ -25,11 +25,11 @@
 import { defineComponent, ref, watch } from 'vue'
 import { useStore } from 'vuex'
 
-import HyForm from '@/base-ui/form'
+import GForm from '@/base-ui/form'
 
 export default defineComponent({
   components: {
-    HyForm
+    GForm
   },
   props: {
     modalConfig: {

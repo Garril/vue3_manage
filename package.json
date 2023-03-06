@@ -3,12 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
-    "prettier": "prettier --write .",
-    "prepare": "husky install",
-    "commit": "cz"
+    "serve": "SET NODE_OPTIONS=--openssl-legacy-provider && vue-cli-service serve",
+    "build": "SET NODE_OPTIONS=--openssl-legacy-provider &&  vue-cli-service build",
+    "lint": "SET NODE_OPTIONS=--openssl-legacy-provider &&  vue-cli-service lint",
+    "prettier": "SET NODE_OPTIONS=--openssl-legacy-provider &&  prettier --write .",
+    "prepare": "SET NODE_OPTIONS=--openssl-legacy-provider &&  husky install",
+    "commit": "SET NODE_OPTIONS=--openssl-legacy-provider &&  cz"
   },
   "dependencies": {
     "axios": "^0.21.1",

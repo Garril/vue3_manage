@@ -15,7 +15,7 @@ import PageContent from '@/components/page-content'
 import { contentTableConfig } from './config/content.config'
 
 export default defineComponent({
-  name: 'hy-menu',
+  name: 'g-menu',
   components: {
     PageContent
   },

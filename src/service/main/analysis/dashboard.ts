@@ -1,4 +1,4 @@
-import hyRequest from '../../index'
+import gRequest from '../../index'
 
 enum DashboardAPI {
   categoryGoodsCount = '/goods/category/count',
@@ -8,25 +8,25 @@ enum DashboardAPI {
 }
 
 export function getCategoryGoodsCount() {
-  return hyRequest.get({
+  return gRequest.get({
     url: DashboardAPI.categoryGoodsCount
   })
 }
 
 export function getCategoryGoodsSale() {
-  return hyRequest.get({
+  return gRequest.get({
     url: DashboardAPI.categoryGoodsSale
   })
 }
 
 export function getCategoryGoodsFavor() {
-  return hyRequest.get({
+  return gRequest.get({
     url: DashboardAPI.categoryGoodsFavor
   })
 }
 
 export function getAddressGoodsSale() {
-  return hyRequest.get({
+  return gRequest.get({
     url: DashboardAPI.addressGoodsSale
   })
 }

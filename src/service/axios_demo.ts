@@ -10,7 +10,7 @@ axios.get('http://123.207.32.32:8000/home/multidata').then((res) => {
 // axios
 //   .get('http://httpbin.org/get', {
 //     params: {
-//       name: 'coderwhy',
+//       name: 'garril',
 //       age: 18
 //     }
 //   })
@@ -22,7 +22,7 @@ axios.get('http://123.207.32.32:8000/home/multidata').then((res) => {
 // axios
 //   .post('http://httpbin.org/post', {
 //     data: {
-//       name: 'why',
+//       name: 'garril',
 //       age: 18
 //     }
 //   })
@@ -48,7 +48,7 @@ axios.defaults.timeout = 10000
 // axios
 //   .get('/get', {
 //     params: {
-//       name: 'coderwhy',
+//       name: 'garril',
 //       age: 18
 //     },
 //     timeout: 5000,
@@ -62,7 +62,7 @@ axios.defaults.timeout = 10000
 // axios
 //   .post('/post', {
 //     data: {
-//       name: 'why',
+//       name: 'garril',
 //       age: 18
 //     }
 //   })
@@ -73,8 +73,8 @@ axios.defaults.timeout = 10000
 // 5.axios.all -> 多个请求, 一起返回
 axios
   .all([
-    axios.get('/get', { params: { name: 'why', age: 18 } }),
-    axios.post('/post', { data: { name: 'why', age: 18 } })
+    axios.get('/get', { params: { name: 'garril', age: 18 } }),
+    axios.post('/post', { data: { name: 'garril', age: 18 } })
   ])
   .then((res) => {
     console.log(res[0].data)

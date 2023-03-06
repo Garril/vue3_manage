@@ -2,32 +2,32 @@
   <div class="dashboard">
     <el-row :gutter="10">
       <el-col :span="7">
-        <hy-card title="分类商品数量(饼图)">
+        <g-card title="分类商品数量(饼图)">
           <pie-echart :pieData="categoryGoodsCount"></pie-echart>
-        </hy-card>
+        </g-card>
       </el-col>
       <el-col :span="10">
-        <hy-card title="不同城市商品销量">
+        <g-card title="不同城市商品销量">
           <map-echart :mapData="addressGoodsSale"></map-echart>
-        </hy-card>
+        </g-card>
       </el-col>
       <el-col :span="7">
-        <hy-card title="分类商品数量(玫瑰图)">
+        <g-card title="分类商品数量(玫瑰图)">
           <rose-echart :roseData="categoryGoodsCount"></rose-echart>
-        </hy-card>
+        </g-card>
       </el-col>
     </el-row>
 
     <el-row :gutter="10" class="content-row">
       <el-col :span="12">
-        <hy-card title="分类商品的销量">
+        <g-card title="分类商品的销量">
           <line-echart v-bind="categoryGoodsSale"></line-echart>
-        </hy-card>
+        </g-card>
       </el-col>
       <el-col :span="12">
-        <hy-card title="分类商品的收藏">
+        <g-card title="分类商品的收藏">
           <bar-echart v-bind="categoryGoodsFavor"></bar-echart>
-        </hy-card>
+        </g-card>
       </el-col>
     </el-row>
   </div>
@@ -37,7 +37,7 @@
 import { defineComponent, computed } from 'vue'
 import { useStore } from '@/store'
 
-import HyCard from '@/base-ui/card'
+import GCard from '@/base-ui/card'
 import {
   PieEchart,
   RoseEchart,
@@ -49,7 +49,7 @@ import {
 export default defineComponent({
   name: 'dashboard',
   components: {
-    HyCard,
+    GCard,
     PieEchart,
     RoseEchart,
     LineEchart,

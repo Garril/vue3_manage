@@ -17,11 +17,6 @@ export default defineComponent({
   components: {
     ElConfigProvider
   },
-  props: {
-    name: {
-      type: String
-    }
-  },
   setup() {
     return {
       zhCn
