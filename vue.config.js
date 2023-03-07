@@ -7,7 +7,7 @@ module.exports = {
   devServer: {
     proxy: {
       '^/api': {
-        target: 'http://152.136.185.210:4000',
+        target: 'http://123.207.32.32:5000',
         pathRewrite: {
           '^/api': ''
         },
@@ -19,7 +19,8 @@ module.exports = {
   configureWebpack: {
     resolve: {
       alias: {
-        components: '@/components'
+        components: '@/components',
+        mock: '@/mock'
       }
     }
   }

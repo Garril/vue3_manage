@@ -39,6 +39,6 @@
     "src/**/*.vue",
     "tests/**/*.ts",
     "tests/**/*.tsx"
-  ],
+, "src/mock/index.js", "src/mock/login/index.js"  ],
   "exclude": ["node_modules"]
 }

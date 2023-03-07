@@ -13,6 +13,8 @@ import { IAccount } from '@/service/login/type'
 import { ILoginState } from './types'
 import { IRootState } from '../types'
 
+const { getLoginMockData } = require('@/mock/login')
+
 const loginModule: Module<ILoginState, IRootState> = {
   namespaced: true,
   state() {
@@ -53,10 +55,12 @@ const loginModule: Module<ILoginState, IRootState> = {
     async accountLoginAction({ commit, dispatch }, payload: IAccount) {
       // 1.实现登录逻辑
       const loginResult = await accountLoginRequest(payload)
+      // if (loginResult.code !== 200) {
+      //   loginResult = getLoginMockData()
+      // }
       const { id, token } = loginResult.data
       commit('changeToken', token)
       localCache.setCache('token', token)
-
       // 发送初始化的请求(完整的role/department)
       dispatch('getInitialDataAction', null, { root: true })
 
@@ -81,6 +85,8 @@ const loginModule: Module<ILoginState, IRootState> = {
         commit('changeToken', token)
         // 发送初始化的请求(完整的role/department)
         dispatch('getInitialDataAction', null, { root: true })
+      } else {
+        localCache.deleteCache('token')
       }
       const userInfo = localCache.getCache('userInfo')
       if (userInfo) {
