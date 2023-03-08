@@ -13,8 +13,6 @@ import { IAccount } from '@/service/login/type'
 import { ILoginState } from './types'
 import { IRootState } from '../types'
 
-const { getLoginMockData } = require('@/mock/login')
-
 const loginModule: Module<ILoginState, IRootState> = {
   namespaced: true,
   state() {

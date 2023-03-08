@@ -13,7 +13,6 @@ export function mapMenusToRoutes(userMenus: any[]): RouteRecordRaw[] {
     const route = require('../router/main' + key.split('.')[1])
     allRoutes.push(route.default)
   })
-
   // 2.根据菜单获取需要添加的routes
   // userMenus:
   // type === 1 -> children -> type === 1
@@ -102,8 +101,11 @@ export function mapMenusToPermissions(userMenus: any[]) {
   const _recurseGetPermission = (menus: any[]) => {
     for (const menu of menus) {
       if (menu.type === 1 || menu.type === 2) {
+        console.log('menu--1', menu)
         _recurseGetPermission(menu.children ?? [])
       } else if (menu.type === 3) {
+        console.log('menu--2', menu)
+        console.log('menu.permission', menu.perssion)
         permissions.push(menu.permission)
       }
     }
