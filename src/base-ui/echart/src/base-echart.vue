@@ -12,7 +12,7 @@ import useEchart from '../hooks/useEchart'
 // 定义props
 const props = withDefaults(
   defineProps<{
-    options: EChartsOption
+    options: EChartsOption | any
     width?: string
     height?: string
   }>(),

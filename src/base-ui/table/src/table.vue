@@ -73,8 +73,7 @@ export default defineComponent({
       default: 0
     },
     propList: {
-      type: Array,
-      required: true
+      type: Array
     },
     showIndexColumn: {
       type: Boolean,

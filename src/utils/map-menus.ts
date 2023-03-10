@@ -52,6 +52,8 @@ export function pathMapToMenu(
     if (menu.type === 1) {
       const findMenu = pathMapToMenu(menu.children ?? [], currentPath)
       if (findMenu) {
+        // eg: /main/system/role
+        // 先push system的name，再push role的name
         breadcrumbs?.push({ name: menu.name })
         breadcrumbs?.push({ name: findMenu.name })
         return findMenu
@@ -62,50 +64,17 @@ export function pathMapToMenu(
   }
 }
 
-// export function pathMapBreadcrumbs(userMenus: any[], currentPath: string) {
-//   const breadcrumbs: IBreadcrumb[] = []
-
-//   for (const menu of userMenus) {
-//     if (menu.type === 1) {
-//       const findMenu = pathMapToMenu(menu.children ?? [], currentPath)
-//       if (findMenu) {
-//         breadcrumbs.push({ name: menu.name, path: menu.url })
-//         breadcrumbs.push({ name: findMenu.name, path: findMenu.url })
-//         return findMenu
-//       }
-//     } else if (menu.type === 2 && menu.url === currentPath) {
-//       return menu
-//     }
-//   }
-
-//   return breadcrumbs
-// }
-
-// // /main/system/role  -> type === 2 对应menu
-// export function pathMapToMenu(userMenus: any[], currentPath: string): any {
-//   for (const menu of userMenus) {
-//     if (menu.type === 1) {
-//       const findMenu = pathMapToMenu(menu.children ?? [], currentPath)
-//       if (findMenu) {
-//         return findMenu
-//       }
-//     } else if (menu.type === 2 && menu.url === currentPath) {
-//       return menu
-//     }
-//   }
-// }
-
 export function mapMenusToPermissions(userMenus: any[]) {
   const permissions: string[] = []
 
   const _recurseGetPermission = (menus: any[]) => {
     for (const menu of menus) {
       if (menu.type === 1 || menu.type === 2) {
-        console.log('menu--1', menu)
+        // console.log('menu--1', menu)
         _recurseGetPermission(menu.children ?? [])
       } else if (menu.type === 3) {
-        console.log('menu--2', menu)
-        console.log('menu.permission', menu.perssion)
+        // console.log('menu--2', menu)
+        // console.log('menu.permission', menu.perssion)
         permissions.push(menu.permission)
       }
     }
